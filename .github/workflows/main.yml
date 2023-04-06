@@ -33,7 +33,7 @@ jobs:
           # The GITHUB_SECRET token
           token: ${{ secrets.GITHUB_TOKEN }}
           # CLI Arguments to pass to StyLua
-          args: --glob '**/*.lua' -- /home/runner/work/Quark/Quark
+          args: --search-parent-directories --glob '**/*.lua' -- /home/runner/work/Quark/Quark
           # The version of StyLua to run. Use `latest` to pull the latest version
           version: latest
 
