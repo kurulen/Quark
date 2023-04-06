@@ -36,7 +36,7 @@ jobs:
           make;
           shopt -s globstar;
           for x in /home/runner/work/Quark/Quark/**/*.lua; do
-            ./lua-format $x --verbose --use-tab --line-separator=lf; done
+            ./lua-format "$x" --verbose --use-tab --line-separator=lf; done
 
       - name: Commit and push
         run: >
