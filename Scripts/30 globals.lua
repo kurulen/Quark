@@ -35,7 +35,7 @@ ThemeInfo = {
    --Codename = "Milestone 1, Charm",
    --
    -- use these for dev builds
-   --Release = "dev",
+   --Release = "[dev]",
    --Codename = "Strange",
    Release = "[dev]",
    Codename = "Strange",
