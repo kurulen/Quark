@@ -20,7 +20,7 @@ t[#t+1] = Def.ActorFrame {
 			   },
   LoadActor("_2bg_over.png") .. {
      InitCommand=function(self)
-	self:zoomto(SCREEN_HEIGHT*2+SAFE_HEIGHT*2,SCREEN_HEIGHT*2+SAFE_HEIGHT*2)
+	self:zoomto(SCREEN_HEIGHT*1.85+SAFE_HEIGHT*1.85,SCREEN_HEIGHT*1.85+SAFE_HEIGHT*1.85)
 	self:z(-256)
 	self:queuecommand("Animate")
      end,

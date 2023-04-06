@@ -19,7 +19,13 @@ t[#t + 1] = Def.ActorFrame {
    end
 }
 t[#t + 1] =
-    Def.ActorFrame {
+   Def.ActorFrame {
+      Def.Sound {
+	 File = THEME:GetPathS("Common", "system message"),
+	 SoundSystemMessageMessageCommand = function(self)
+	    self:play()
+	 end
+      },
     Def.Quad {
         InitCommand = function(self)
             self:zoomtowidth(SCREEN_WIDTH):zoomtoheight(30):horizalign(left):vertalign(top):y(SCREEN_TOP):diffuse(
@@ -49,12 +55,13 @@ t[#t + 1] =
         end
     },
     SystemMessageMessageCommand = function(self, params)
-        self:GetChild("Text"):settext(params.Message)
-        self:playcommand("On")
-        if params.NoAnimate then
-            self:finishtweening()
-        end
-        self:playcommand("Off")
+       self:GetChild("Text"):settext(params.Message)
+       MESSAGEMAN:Broadcast("SoundSystemMessage")
+       self:playcommand("On")
+       if params.NoAnimate then
+	  self:finishtweening()
+       end
+       self:playcommand("Off")
     end,
     HideSystemMessageMessageCommand = function(self)
         self:finishtweening()

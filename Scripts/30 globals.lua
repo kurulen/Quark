@@ -1,6 +1,6 @@
 -- set this to true to enable debugging features
 --     (mainly because i can't be arsed with doing it normal)
-Debug = false
+Debug = THEME:GetMetric("Common", "Debuggable")
 
 -- how many ticks have occurred (cleared at MaxTicks)
 TickSum = 1
