@@ -1,6 +1,7 @@
--- set this to true to enable debugging features
---     (mainly because i can't be arsed with doing it normal)
-Debug = THEME:GetMetric("Common", "Debuggable")
+Debug = false
+if ReadGamePrefFromFile("Quark_DebugEnabled") == "true" then
+   Debug = true
+end
 
 -- how many ticks have occurred (cleared at MaxTicks)
 TickSum = 1

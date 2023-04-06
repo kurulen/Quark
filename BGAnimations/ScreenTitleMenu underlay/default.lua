@@ -50,12 +50,26 @@ return Def.ActorFrame {
 			     },
    Def.BitmapText {
       Font = "Common normal",
-      Text = "Quark v!! (!!!!!!!!)\nMade by !!!!!!!!!!!!!!!!!!!!!!!!",
       InitCommand=function(self)
-	 self:draworder(150)
+	 self:draworder(200)
 	 self:zoom(FontSizes.Small)
 	 self:xy(QuarkUnit(516).Horz,QuarkUnit(190).Vert)
+	 self:settext("Quark v!! (!!!!!!!!)\nMade by !!!!!!!!!!!!!!!!!!!!!!!!")
+	 self:playcommand("UpdateText")
+      end,
+      UpdateTextCommand=function(self)
 	 self:settext("Quark r" .. ThemeInfo.Release .. " (" .. ThemeInfo.Codename .. ")\nMade by " .. ThemeInfo.Author)
+      end,
+      CodeMessageCommand=function(self,params)
+	 if params.Name == "EnableDebug" then
+	    if ReadGamePrefFromFile("Quark_DebugEnabled") ~= "true" then
+	       WriteGamePrefToFile("Quark_DebugEnabled", "true")
+	       SCREENMAN:SystemMessage("You are now a developer!\nRestart to apply changes.")
+	    else
+	       WriteGamePrefToFile("Quark_DebugEnabled", "false")
+	       SCREENMAN:SystemMessage("You are no longer a developer.\nRestart to apply changes.")
+	    end
+	 end
       end
    }
 }
