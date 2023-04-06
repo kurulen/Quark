@@ -1,5 +1,8 @@
-# Quark
-Theme for Etterna built from the ground up for performance.
+<img ref="https://github.com/kurulen/Quark/blob/main/_repoLogo.png"/>
+<hr/>
+
+Quark is a theme for Etterna centered around slimming the game down to its core.
+No compromises -- just pure, unbridled performance.
 
 Roadmap:<br/>
   |:white_check_mark:| Frametime-based animation<br/>
