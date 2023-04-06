@@ -6,6 +6,7 @@ local t = Def.ActorFrame {}
 t[#t+1] = LoadActor("profile")
 t[#t+1] = LoadActor("songinfo")
 t[#t+1] = LoadActor("search")
+t[#t+1] = LoadActor("scrollBG")
 
 -- 5 is a random song button
 -- ctrl+5 is random song in group

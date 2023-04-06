@@ -50,9 +50,18 @@ local function searcher(event)
     end
 end
 
+t[#t+1] = LoadActor(THEME:GetPathG("ScreenSelectMusic", "SearchBG")) .. {
+	InitCommand=function(self)
+	self:Center()
+	self:visible(true)
+        self:zoomto(SCREEN_WIDTH,SCREEN_HEIGHT)
+        self:diffusealpha(0.8)
+	end
+	                                                            }
+
 t[#t+1] = Def.ActorFrame {
     InitCommand = function(self)
-        self:xy(SCREEN_CENTER_X + SCREEN_WIDTH/3, 20)
+       self:xy(SCREEN_WIDTH-QuarkUnit(192).Horz, QuarkUnit(96).Vert)
     end,
     OnCommand = function(self)
         SCREENMAN:GetTopScreen():AddInputCallback(searcher)
@@ -71,16 +80,17 @@ t[#t+1] = Def.ActorFrame {
 
     LoadFont("Common Normal") .. {
         InitCommand = function(self)
-            self:zoom(0.4)
-            self:settext("Song Search (4)")
+	   self:zoom(FontSizes.Small)
+           self:settext("Title Filter (4)")
         end
     },
-    LoadFont("Common Normal") .. {
+    Def.BitmapText {
+        Font = "Common normal",
         Name = "SearchInput",
         InitCommand = function(self)
-            self:y(10)
-            self:zoom(0.3)
-            self:maxwidth(SCREEN_WIDTH/4 / 0.3)
+	   self:y(QuarkUnit(16).Vert)
+	   self:maxwidth(QuarkUnit(486).Horz)
+            self:zoom(FontSizes.Small)
         end,
         SetCommand = function(self)
             self:settext(searchstring)
@@ -92,13 +102,12 @@ t[#t+1] = Def.ActorFrame {
     LoadFont("Common Normal") .. {
         Name = "SearchActive",
         InitCommand = function(self)
-            self:y(20):zoom(.3):settext("ACTIVE"):visible(false)
+	   self:y(QuarkUnit(32).Vert):zoom(FontSizes.XSmall):settext("ACTIVE"):visible(false)
         end,
         SetCommand = function(self)
             self:visible(active)
         end
-    }
+				 }
 }
-
 
 return t
