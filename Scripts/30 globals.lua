@@ -37,7 +37,7 @@ ThemeInfo = {
    -- use these for dev builds
    --Release = "dev",
    --Codename = "Strange",
-   Release = "dev",
+   Release = "[dev]",
    Codename = "Strange",
    Author = "Hia Labs"
 }
