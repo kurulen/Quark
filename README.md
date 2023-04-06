@@ -1,4 +1,4 @@
-<img ref="https://github.com/kurulen/Quark/blob/main/_repoLogo.png"/>
+<img ref="https://github.com/kurulen/Quark/raw/main/_repoLogo.png"/>
 <hr/>
 
 Quark is a theme for Etterna centered around slimming the game down to its core.
