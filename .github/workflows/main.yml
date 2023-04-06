@@ -25,17 +25,18 @@ jobs:
         with:
           ref: main
 
-      - name: Run formatter (StyLua)
+      - name: Run formatter (LuaFormatter)
         # You may pin to the exact commit or the version.
         # uses: JohnnyMorganz/stylua-action@7b4006562fec80e637cdc03897f45fe48e38b7de
-        uses: JohnnyMorganz/stylua-action@v2.0.0
-        with:
-          # The GITHUB_SECRET token
-          token: ${{ secrets.GITHUB_TOKEN }}
-          # CLI Arguments to pass to StyLua
-          args: --search-parent-directories --glob '**/*.lua' -- /home/runner/work/Quark/Quark
-          # The version of StyLua to run. Use `latest` to pull the latest version
-          version: latest
+        run: >
+          cd /home/runner/work;
+          git clone --recurse-submodules https://github.com/Koihik/LuaFormatter.git;
+          cd LuaFormatter;
+          cmake .;
+          make;
+          shopt -s globstar;
+          for x in /home/runner/work/Quark/Quark/**/*.lua; do
+            ./lua-format $x --verbose --use-tab --line-separator=lf; done
 
       - name: Commit and push
         run: >
