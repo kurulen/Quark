@@ -1,0 +1,49 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Run formatter (LuaFormatter)
+        # You may pin to the exact commit or the version.
+        # uses: JohnnyMorganz/stylua-action@7b4006562fec80e637cdc03897f45fe48e38b7de
+        run: >
+          cd /home/runner/work;
+          git clone --recurse-submodules https://github.com/Koihik/LuaFormatter.git;
+          cd LuaFormatter;
+          cmake .;
+          make;
+          shopt -s globstar;
+          for x in /home/runner/work/Quark/Quark/**/*.lua; do
+            ./lua-format "$x" --verbose --use-tab --line-separator=lf > "$x"; done
+
+      - name: Commit and push
+        run: >
+          cd /home/runner/work/Quark/Quark;
+          git_hash=$(git rev-parse --short "$GITHUB_SHA");
+          git config user.name "GitHub Actions";
+          git config user.email "nobody@nowhere";
+          git add *;
+          git commit -m "Automated formatting action for commit $git_hash";
+          git push origin main;

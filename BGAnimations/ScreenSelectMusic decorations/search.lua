@@ -1,6 +1,3 @@
-local t = Def.ActorFrame {}
--- Controls the song search relevant children of the ScreenSelectMusic decorations actorframe
-
 local active = false
 local lastsearchstring = ""
 local searchstring = ""

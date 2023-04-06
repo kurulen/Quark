@@ -1,8 +1,3 @@
-local t = Def.ActorFrame {}
--- Controls the middle layer of ScreenSelectMusic
--- this file is loaded first, as default
--- load additional files below to make children in an organized way
-
 t[#t+1] = LoadActor("profile")
 t[#t+1] = LoadActor("songinfo")
 t[#t+1] = LoadActor("search")
