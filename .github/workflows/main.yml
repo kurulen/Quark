@@ -43,7 +43,7 @@ jobs:
         run: >
           cd /home/runner/work/Quark/Quark;
           git_hash=$(git rev-parse --short "$GITHUB_SHA");
-          git config user.name "GitHub Actions";
+          git config user.name "GitHub Actions $git_hash";
           git config user.email "nobody@nowhere";
           git add *;
           git commit -m "Automated formatting action for commit $git_hash";
