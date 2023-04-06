@@ -8,7 +8,7 @@ return Def.ActorFrame {
 	 self:zoomto(QuarkUnit(512).Horz,QuarkUnit(1).Vert)
 	 self:diffuse(Palettes.StepMania.White)
 	 self:diffuserightedge(Palettes.Special.Invisible)
-	 self:xy(-QuarkUnit(585).Horz,-QuarkUnit(150).Vert)
+	 self:xy(-QuarkUnit(655).Horz,-QuarkUnit(150).Vert)
       end
    },
    Def.Quad {
@@ -17,7 +17,7 @@ return Def.ActorFrame {
          self:zoomto(QuarkUnit(512).Horz,QuarkUnit(1).Vert)
 	 self:diffuse(Palettes.StepMania.White)
          self:diffuserightedge(Palettes.Special.Invisible)
-	 self:xy(-QuarkUnit(585).Horz,QuarkUnit(150).Vert)
+	 self:xy(-QuarkUnit(525).Horz,QuarkUnit(150).Vert)
       end
    },
    LoadActor("_scroller_bg.png") .. {

@@ -28,7 +28,7 @@ t[#t + 1] =
       },
     Def.Quad {
         InitCommand = function(self)
-            self:zoomtowidth(SCREEN_WIDTH):zoomtoheight(30):horizalign(left):vertalign(top):y(SCREEN_TOP):diffuse(
+            self:zoomtowidth(SCREEN_WIDTH):zoomtoheight(50):horizalign(left):vertalign(top):y(SCREEN_TOP):diffuse(
                 color("0,0,0,0")
             )
         end,
