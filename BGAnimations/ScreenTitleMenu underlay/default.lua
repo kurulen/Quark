@@ -42,9 +42,9 @@ return Def.ActorFrame {
    LoadActor("_logo.png") .. {
       InitCommand=function(self)
 	 self:draworder(150)
-	 self:x(QuarkUnit(374).Horz)
-	 self:addy(-QuarkUnit(179).Vert)
-	 self:zoomto(384,82)
+	 self:x(QuarkUnit(454).Horz)
+	 self:addy(-QuarkUnit(94).Vert)
+	 self:zoomto(384*0.8,384*0.8)
 	 self:diffusealpha(1)
       end
 			     },
