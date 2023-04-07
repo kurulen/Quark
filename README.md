@@ -1,11 +1,11 @@
 <p align="center">
   <img src="https://github.com/kurulen/Quark/raw/main/_repoLogo.png" width="90" height="90"/>
   <br/><br/>
-  <img src="https://img.shields.io/github/commit-activity/w/kurulen/Quark" />
-  <img src="https://img.shields.io/github/license/kurulen/Quark" />
+  <a href="https://github.com/kurulen/Quark/pulse"><img src="https://img.shields.io/github/commit-activity/w/kurulen/Quark" /></a>
+  <a href="https://github.com/kurulen/Quark/blob/main/LICENSE"><img src="https://img.shields.io/github/license/kurulen/Quark" /></a>
   <br/>
-  <img src="https://img.shields.io/github/search/kurulen/Quark/hack" />
-  <img src="https://img.shields.io/github/repo-size/kurulen/Quark?label=theme%20size" />
+  <a href="https://github.com/kurulen/Quark/search?q=(hack)&type=code"><img src="https://img.shields.io/github/search/kurulen/Quark/(hack)?label=kludge%20count" /></a>
+  <a href="https://github.com/kurulen/Quark"><img src="https://img.shields.io/github/repo-size/kurulen/Quark?label=theme%20size" /></a>
 </p>
 <hr/>
 
