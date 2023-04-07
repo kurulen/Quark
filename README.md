@@ -12,7 +12,9 @@
 Quark is a theme for Etterna centered around slimming the game down to its core.
 No compromises -- just pure, unbridled performance.
 
-Roadmap:<br/>
+Roadmap: (:white_check_mark: = done, :yellow_square: = working on, :x: = not done)<br/>
   |:white_check_mark:| Frametime-based animation<br/>
   |:yellow_square:| Basic framework for extending the theme<br/>
-  |:x:| Music selection, gameplay, scoring and evaluation<br/>
+  |:yellow_square:| Music selection, gameplay, scoring and evaluation<br/>
+  |:x:| Configurable stepfile editor<br/>
+  |:x:| Multiplayer support<br/>
