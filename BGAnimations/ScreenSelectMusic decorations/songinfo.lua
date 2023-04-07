@@ -65,17 +65,19 @@ t[#t + 1] = Def.ActorFrame {
 
         LoadFont("Common Normal") .. {
                 InitCommand = function(self)
-		   self:zoom(.5):halign(0):draworder(1000)
+                        self:zoom(.5):halign(0):draworder(1000)
                         self:settextf("Song Info")
                 end
         },
-        makeSSes() .. {InitCommand = function(self) self:y(10):draworder(1000) end},
+        makeSSes() ..
+            {InitCommand = function(self) self:y(10):draworder(1000) end},
 
         Def.BPMDisplay {
                 File = THEME:GetPathF("BPMDisplay", "bpm"),
                 Name = "BPMDisplay",
                 InitCommand = function(self)
-		   self:xy(songinfoLine + 3, 20):halign(0):zoom(0.3):draworder(1000)
+                        self:xy(songinfoLine + 3, 20):halign(0):zoom(0.3)
+                            :draworder(1000)
                 end,
                 SetStuffCommand = function(self)
                         if song then
@@ -88,7 +90,7 @@ t[#t + 1] = Def.ActorFrame {
         },
         LoadFont("Common Normal") .. {
                 InitCommand = function(self)
-		   self:xy(songinfoLine, 20):zoom(.3):draworder(1000)
+                        self:xy(songinfoLine, 20):zoom(.3):draworder(1000)
                         self:settext("BPM:"):halign(1)
                 end
         },
@@ -96,7 +98,7 @@ t[#t + 1] = Def.ActorFrame {
         LoadFont("Common Normal") .. {
                 Name = "RateDisplay",
                 InitCommand = function(self)
-		   self:xy(songinfoLine, 30):zoom(0.3):draworder(1000)
+                        self:xy(songinfoLine, 30):zoom(0.3):draworder(1000)
                 end,
                 CurrentStepsChangedMessageCommand = function(self)
                         self:settext(getCurRateDisplayString())
@@ -106,7 +108,7 @@ t[#t + 1] = Def.ActorFrame {
                         ChangeMusicRate(rate, params)
                         self:settext(getCurRateDisplayString())
                 end
-				     },
+        }
 }
 
 return t
