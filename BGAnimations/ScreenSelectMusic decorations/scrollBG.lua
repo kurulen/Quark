@@ -13,6 +13,24 @@ return Def.ActorFrame {
                         self:zoomto(SCREEN_WIDTH, SCREEN_HEIGHT)
                         self:diffusealpha(0.8)
                 end
+        }, LoadActor(THEME:GetPathG("ScreenSelectMusic", "SongInfoBG")) .. {
+		InitCommand = function(self)
+		   self:Center()
+		   self:draworder(100)
+		       self:zoomto(SCREEN_WIDTH, SCREEN_HEIGHT)
+		       self:addy(QuarkUnit(12).Vert)
+	               self:diffusealpha(0.8)
+                        self:visible(true)
+	       end
+	}, LoadActor(THEME:GetPathG("ScreenSelectMusic", "PlayerInfoBG")) .. {
+                InitCommand = function(self)
+		   self:Center()
+		   self:draworder(100)
+                        self:zoomto(SCREEN_WIDTH, SCREEN_HEIGHT)
+			self:addx(QuarkUnit(36).Horz)
+			self:addy(-QuarkUnit(6).Vert)
+			self:diffusealpha(0.8)
+                end
         }, Def.BitmapText {
                 Font = "Common normal",
                 Text = "Select Music",
